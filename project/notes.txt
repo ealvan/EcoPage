@@ -1,9 +1,0 @@
-To run
-set FLASK_APP=hello
-python -m flask run 
-
--------------------------------------------------------------
-IN ORU LOCAL NETWORK
-
-python -m flask run --host=0.0.0.0 
-

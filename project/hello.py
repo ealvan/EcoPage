@@ -1,4 +1,4 @@
-from flask import Flask, url_for
+from flask import Flask, url_for, request, render_template
 from markupsafe import escape
 
 app = Flask(__name__)
@@ -58,14 +58,48 @@ def about():
 @app.route('/user/<username>')
 def profile(username):
     return f'{username}\'s profile'
-@app.route('/login')
-def login():
-    return 'login'
+
+# @app.route('/login')
+# def login():
+#     return 'login'
+
 
 with app.test_request_context():
     print(url_for('index'))
     print(url_for('hello',name='PEPE'))
-    print(url_for('login', next='/'))
+    # print(url_for('login', next='/'))
     print(url_for('profile', username='John Doe'))
+
+######################################################
+def do_the_login():
+    print("LOGIN PAGE!!!!")
+    return "<b>LOGIN PAGE!!!</b>"
+def show_the_login_form():
+    print("SHOW THE LOGIN PAGE")
+    print(url_for('static',filename="style.css"))
+    return "<p>HELLO LOGIN <a src='/static/style.css'>aver_1__</a></p>"
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        return do_the_login()
+    else:
+        return show_the_login_form()
+
+
+#####################################RENDER TEMPLATE
+@app.route("/hola/")
+@app.route("/hola/<name>")
+def home(name = None):
+    return render_template('hello.html',name=name)
+
+
+
+
+
+
+
+
+
 
 
