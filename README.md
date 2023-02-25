@@ -1,4 +1,10 @@
-#Web Page for Ecology Course
+#Página web Ecología
 ------------------------------------------------------------
-- We are going to do a beautiful web page here, that's all.
+Implementación de una página web, informando los problemas ecológicos del Perú.
+Para mas información visite el [sitio web](ealvan.github.io/EcoPage/)
 
+## Herramientas
+- Bootstrap
+- HTML
+- CSS
+- JavaScript
